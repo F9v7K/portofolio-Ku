@@ -4,16 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Portfolio-KU</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-        <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand fw-bolder" href="#">Portofolio-Ku</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -36,10 +38,13 @@
                             aria-expanded="false">
                             Sosial-Ku
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://www.instagram.com/stread.fvk/" target="_blank"><i class= "fab fa-instagram"></i> Instagram</a></li>
-                            <li><a class="dropdown-item" href="https://github.com/F9v7K" target="_blank"><i class="fab fa-github"></i> Github</a></li>
-                            <li><a class="dropdown-item" href="https://www.tiktok.com/@stread.fvk/" target="_blank"><i class="fab fa-tiktok"></i> Tiktok</a></li>
+                        <ul class="dropdown-menu" style="background-color: aqua;">
+                            <li><a class="dropdown-item" href="https://www.instagram.com/stread.fvk/" target="_blank"><i
+                                        class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a class="dropdown-item" href="https://github.com/F9v7K" target="_blank"><i
+                                        class="fab fa-github"></i> Github</a></li>
+                            <li><a class="dropdown-item" href="https://www.tiktok.com/@stread.fvk/" target="_blank"><i
+                                        class="fab fa-tiktok"></i> Tiktok</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -47,6 +52,25 @@
         </div>
     </nav>
 
+    <!-- hero-page -->
+    <div class="container-fluid">
+        <section class="hero-page">
+            <div class="row">
+                <div class="col-sm col-md-5 col-lg-3">
+                    <img src="img/profil.jpg" class="rounded-5 img-fluid" alt="profil pic ardiansyah">
+                </div>
+                <div class="col-sm col-md-7 col-lg-9">
+                    <p class="lh-lg fs-4 text-body-secondary">Hello world, let me introduce myself, I am
+                        Muhammad Ardiansyah, this is my portfolio website. A simple website, which contains a few
+                        aspects of my history and several projects that I have made.
+                    <p class="fst-italic lh-lg fs-4 text-body-secondary">"design that talks, code that
+                        works"</p>
+                    <p class="fw-bolder lh-lg fs-4 text-body-secondary">This is me, junior web development</p>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
