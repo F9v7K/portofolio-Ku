@@ -1,7 +1,17 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .container-fluid {
     padding-top: 2rem;
 }
+
 .container-fluid img {
     height: 450px;
     width: 100%;
- }
+}
+
+section#hero-page,
+section#about-page {
+    scroll-margin-top: 80px;
+}
