@@ -12,6 +12,14 @@ html {
 }
 
 section#hero-page,
-section#about-page {
+section#about-page,
+section#project {
     scroll-margin-top: 80px;
+}
+
+/* Responsive Breakpoint */
+@media screnn and (max-width: 768px) {
+    section#project {
+        flex-direction: column !important;
+    }
 }
