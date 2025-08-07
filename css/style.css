@@ -7,19 +7,18 @@ html {
 }
 
 .container-fluid img {
-    height: 450px;
+    /* height: 450px; */
     width: 100%;
 }
 
 section#hero-page,
 section#about-page,
-section#project {
+section#projects,
+section#education {
     scroll-margin-top: 80px;
 }
 
-/* Responsive Breakpoint */
-@media screnn and (max-width: 768px) {
-    section#project {
-        flex-direction: column !important;
-    }
+footer {
+    height: 55px;
+    background-color: #212529;
 }
