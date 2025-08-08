@@ -92,7 +92,7 @@
     </nav>
 
     <!-- hero-page -->
-    <div class="container-fluid bg-dark-subtle p-4" style="padding-top: 100px !important;">
+    <div class="container-fluid bg-dark-subtle p-2" style="padding-top: 90px !important;">
         <section id="hero-page">
             <div class="row">
                 <div class="col-md  col-lg-3">
@@ -100,7 +100,7 @@
                         class="rounded-circle object-fit-cover border rounded" alt="profil pic ardiansyah">
                 </div>
                 <div
-                    class="col-md col-lg-9 d-flex flex-column align-items-center justify-content-center mt-2 text-center">
+                    class="col-md col-lg-9 d-flex flex-column align-items-center justify-content-center mt-3 text-center">
                     <p class="lh-lg fs-3 text-body-secondary">Hello world, let me introduce myself, I am
                         Muhammad Ardiansyah, this is my portfolio website. A simple website, which contains a few
                         aspects of my history and several projects that I have made.
@@ -257,101 +257,148 @@
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- footer -->
-    <footer class="bg-dark text-light text-center mt-4 d-flex align-items-center justify-content-center">
-        <h5><i class="bi bi-c-square fs-6 me-1"></i>porto.muhammadardiansyah | 2025</h5>
-    </footer>
+        <section id="contacs" class="mt-4 container-lg">
+            <h1>Contact Me</h1>
+            <div class="alert alert-warning alert-dismissible fade show d-none my-alert" role="alert">
+                <strong>TerimaKasih!</strong> Text Message Succes.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form name="form-contacs-ku">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Text Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+                </div>
+                <input class="btn btn-primary btn-kirim" type="submit" value="Submit">
+                <button class="btn btn-primary d-none btn-loading" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                    <span role="status">Loading...</span>
+                </button>
+            </form>
+        </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
+        <!-- footer -->
+        <footer class="mt-5 text-center fixed-bottom opacity-25" style="height: 20px;">
+            <p style=" font-size: 12px;"><i class="bi bi-c-square me-1"></i>porto-created.muhammadardiansyah | 2025</p>
+        </footer>
 
-    <script>
-        /*!
- * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2025 The Bootstrap Authors
- * Licensed under the Creative Commons Attribution 3.0 Unported License.
- */
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"></script>
 
-        (() => {
-            'use strict'
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzKuj9yPMPq91PQFerSm_m7ZBEesF1cWJg53sd8SFem9Hnv3IN433LPuXgvNRggp2Tikw/exec';
+            const form = document.forms['form-contacs-ku'];
+            const btnKirim = document.querySelector('.btn-kirim');
+            const btnLoading = document.querySelector('.btn-loading');
+            const myAlert = document.querySelector('.my-alert');
 
-            const getStoredTheme = () => localStorage.getItem('theme')
-            const setStoredTheme = theme => localStorage.setItem('theme', theme)
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                btnKirim.classList.toggle('d-none');
+                btnLoading.classList.toggle('d-none');
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then((response) => {
+                        btnKirim.classList.toggle('d-none');
+                        btnLoading.classList.toggle('d-none');
+                        myAlert.classList.toggle('d-none');
+                        form.reset();
+                        console.log('Success!', response);
+                    })
+                    .catch(error => console.error('Error!', error.message))
+            });
+        </script>
 
-            const getPreferredTheme = () => {
-                const storedTheme = getStoredTheme()
-                if (storedTheme) {
-                    return storedTheme
+        <script>
+
+            /*!
+     * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+     * Copyright 2011-2025 The Bootstrap Authors
+     * Licensed under the Creative Commons Attribution 3.0 Unported License.
+     */
+
+            (() => {
+                'use strict'
+
+                const getStoredTheme = () => localStorage.getItem('theme')
+                const setStoredTheme = theme => localStorage.setItem('theme', theme)
+
+                const getPreferredTheme = () => {
+                    const storedTheme = getStoredTheme()
+                    if (storedTheme) {
+                        return storedTheme
+                    }
+
+                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
                 }
 
-                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-            }
-
-            const setTheme = theme => {
-                if (theme === 'auto') {
-                    document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
-                } else {
-                    document.documentElement.setAttribute('data-bs-theme', theme)
-                }
-            }
-
-            setTheme(getPreferredTheme())
-
-            const showActiveTheme = (theme, focus = false) => {
-                const themeSwitcher = document.querySelector('#bd-theme')
-
-                if (!themeSwitcher) {
-                    return
+                const setTheme = theme => {
+                    if (theme === 'auto') {
+                        document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+                    } else {
+                        document.documentElement.setAttribute('data-bs-theme', theme)
+                    }
                 }
 
-                const themeSwitcherText = document.querySelector('#bd-theme-text')
-                const activeThemeIcon = document.querySelector('.theme-icon-active')
-                const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-                const iconOfActiveBtn = btnToActive.querySelector('i').dataset.themeIcon
+                setTheme(getPreferredTheme())
 
-                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-                    element.classList.remove('active')
-                    element.setAttribute('aria-pressed', 'false')
+                const showActiveTheme = (theme, focus = false) => {
+                    const themeSwitcher = document.querySelector('#bd-theme')
+
+                    if (!themeSwitcher) {
+                        return
+                    }
+
+                    const themeSwitcherText = document.querySelector('#bd-theme-text')
+                    const activeThemeIcon = document.querySelector('.theme-icon-active')
+                    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+                    const iconOfActiveBtn = btnToActive.querySelector('i').dataset.themeIcon
+
+                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                        element.classList.remove('active')
+                        element.setAttribute('aria-pressed', 'false')
+                    })
+
+                    btnToActive.classList.add('active')
+                    btnToActive.setAttribute('aria-pressed', 'true')
+                    activeThemeIcon.classList.remove(activeThemeIcon.dataset.themeIconActive)
+                    activeThemeIcon.classList.add(iconOfActiveBtn)
+                    activeThemeIcon.dataset.iconActive = iconOfActiveBtn
+                    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+                    themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+
+                    if (focus) {
+                        themeSwitcher.focus()
+                    }
+                }
+
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                    const storedTheme = getStoredTheme()
+                    if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                        setTheme(getPreferredTheme())
+                    }
                 })
 
-                btnToActive.classList.add('active')
-                btnToActive.setAttribute('aria-pressed', 'true')
-                activeThemeIcon.classList.remove(activeThemeIcon.dataset.themeIconActive)
-                activeThemeIcon.classList.add(iconOfActiveBtn)
-                activeThemeIcon.dataset.iconActive = iconOfActiveBtn
-                const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
-                themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+                window.addEventListener('DOMContentLoaded', () => {
+                    showActiveTheme(getPreferredTheme())
 
-                if (focus) {
-                    themeSwitcher.focus()
-                }
-            }
-
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-                const storedTheme = getStoredTheme()
-                if (storedTheme !== 'light' && storedTheme !== 'dark') {
-                    setTheme(getPreferredTheme())
-                }
-            })
-
-            window.addEventListener('DOMContentLoaded', () => {
-                showActiveTheme(getPreferredTheme())
-
-                document.querySelectorAll('[data-bs-theme-value]')
-                    .forEach(toggle => {
-                        toggle.addEventListener('click', () => {
-                            const theme = toggle.getAttribute('data-bs-theme-value')
-                            setStoredTheme(theme)
-                            setTheme(theme)
-                            showActiveTheme(theme, true)
+                    document.querySelectorAll('[data-bs-theme-value]')
+                        .forEach(toggle => {
+                            toggle.addEventListener('click', () => {
+                                const theme = toggle.getAttribute('data-bs-theme-value')
+                                setStoredTheme(theme)
+                                setTheme(theme)
+                                showActiveTheme(theme, true)
+                            })
                         })
-                    })
-            })
-        })()
-    </script>
+                })
+            })()
+        </script>
 </body>
 
 </html>
