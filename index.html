@@ -14,6 +14,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -97,9 +99,9 @@
             <div class="row">
                 <div class="col-md  col-lg-3">
                     <img src="img/profil-pic.png" class="rounded-circle object-fit-cover border rounded"
-                        alt="profil pic ardiansyah">
+                        alt="profil pic ardiansyah" data-aos="flip-right" data-aos-duration="1000">
                 </div>
-                <div
+                <div data-aos="zoom-in" data-aos-duration="1000"
                     class="col-md col-lg-9 d-flex flex-column align-items-center justify-content-center mt-3 text-center">
                     <p class="lh-lg fs-3 text-body-secondary">Hello world, let me introduce myself, I am
                         Muhammad Ardiansyah, this is my portfolio website. A simple website, which contains a few
@@ -114,7 +116,7 @@
     </div>
 
     <!-- about-page -->
-    <div class="container bg-body-tertiary mt-4 p-4 rounded-3">
+    <div class="container bg-body-tertiary mt-4 p-4 rounded-3" data-aos="fade-in" data-aos-duration="1200">
         <section id="about-page">
             <h1 class="text-center mb-4 fw-bolder fs-1">About me</h1>
             <p class="text-body-secondary fs-5">Hi, I'm Muhammad — a systems optimizer and Git workflow specialist based
@@ -158,11 +160,11 @@
     <!-- MyProject -->
     <section id="projects" class="py-5 bg-body-secondary mt-3">
         <div class="container">
-            <h2 class="text-center mb-4"> <span class="text-warning fw-bolder fs-1">My</span><span
-                    class="fw-bolder fs-1">Projects</span></h2>
+            <h2 class="text-center mb-4" data-aos="fade-up" data-aos-duration="1200"> <span
+                    class="text-warning fw-bolder fs-1">My</span><span class="fw-bolder fs-1">Projects</span></h2>
             <div class="row">
                 <!-- Project 1 -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="zoom-out" data-aos-delay="100" data-aos-duration="1200">
                     <div class="card h-100 shadow-sm">
                         <img src="img/Screenshot 2025-08-07 111751.png" class="card-img-top" alt="Project 1">
                         <div class="card-body">
@@ -178,7 +180,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="zoom-out" data-aos-delay="200" data-aos-duration="1200">
                     <div class="card h-100 shadow-sm">
                         <img src="img/Screenshot 2025-08-07 122000.png  " class="card-img-top" alt="Project 2">
                         <div class="card-body">
@@ -192,7 +194,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1200">
                     <div class="card h-100 shadow-sm">
                         <img src="img/Screenshot 2025-08-07 122039.png" class="card-img-top" alt="Project 3">
                         <div class="card-body">
@@ -212,11 +214,12 @@
     <!-- Education&Experience -->
     <section id="education" class="py-5 bg-dark text-light">
         <div class="container">
-            <h2 class="text-center mb-5"><span class="fw-bolder fs-1">Education</span> & <span
-                    class="text-danger fw-bolder fs-1">Experience</span></h2>
+            <h2 class="text-center mb-5" data-aos="fade-down" data-aos-duration="1200"><span
+                    class="fw-bolder fs-1">Education</span> & <span class="text-danger fw-bolder fs-1">Experience</span>
+            </h2>
             <div class="row justify-content-center">
                 <!-- Education Item 1 -->
-                <div class="col-md-8 mb-4">
+                <div class="col-md-8 mb-4" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1200">
                     <div class="card bg-secondary text-light shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title">TEKNIK ELEKTRONIKA AUDIO VIDEO</h5>
@@ -229,7 +232,7 @@
                 </div>
 
                 <!-- Education Item 2 -->
-                <div class="col-md-8 mb-4">
+                <div class="col-md-8 mb-4" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1200">
                     <div class="card bg-secondary text-light shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title">Work Internship Certificate</h5>
@@ -241,7 +244,7 @@
                 </div>
 
                 <!-- education now -->
-                <div class="col-md-8 mb-4">
+                <div class="col-md-8 mb-4" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200">
                     <div class="card bg-secondary text-light shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title">SISTEM KOMPUTER</h5>
@@ -258,13 +261,14 @@
             </div>
         </div>
 
-        <section id="contacs" class="mt-4 container-lg">
+        <section id="contacs" class="mt-4 container-lg" data-aos="fade-up" data-aos-delay="250"
+            data-aos-duration="1200">
             <h1>Contact Me</h1>
             <div class="alert alert-warning alert-dismissible fade show d-none my-alert" role="alert">
                 <strong>TerimaKasih!</strong> Text Message Succes.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <form name="form-contacs-ku">
+            <form name="form-contacs-ku" data-aos="fade-down" data-aos-delay="250" data-aos-duration="1200">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1"
@@ -291,6 +295,13 @@
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
 
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                once: true,
+            });
+        </script>
+
         <script>
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzKuj9yPMPq91PQFerSm_m7ZBEesF1cWJg53sd8SFem9Hnv3IN433LPuXgvNRggp2Tikw/exec';
             const form = document.forms['form-contacs-ku'];
@@ -311,7 +322,7 @@
                         console.log('Success!', response);
                     })
                     .catch(error => console.error('Error!', error.message))
-            });
+            }); 
         </script>
 
         <script>
